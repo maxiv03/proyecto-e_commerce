@@ -19,9 +19,24 @@
 <body>
   <main class="mt-5">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <form id="mi-formulario">
+        <img class="mb-4" src="img/login.png" alt="">
+        <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
+    
+        <div class="form-floating">
+          <input type="email" class="form-control" id="loginMail" placeholder="name@example.com">
+          <label for="login-mail">Email address</label>
+        </div>
+        <div id="invalidMail">
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+          <label for="loginPassword">Password</label>
+        </div>
+        <div id="invalidPassword">
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+      </form>
     </div>
   </main>
   <footer class="text-muted">
