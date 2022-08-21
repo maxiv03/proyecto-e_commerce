@@ -8,7 +8,7 @@ miFormulario.addEventListener('submit', function(evento){
 
     if ((loginMail.value).length > 0 && (loginPassword.value).length > 0) {
         evento.preventDefault();
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
     } else if (!((loginMail.value).length > 0) && !(loginPassword.value).length > 0){
         evento.preventDefault();
         document.getElementById("invalidMail").innerHTML = '<p style="color:red">Ingrese un mail por favor</p>';
