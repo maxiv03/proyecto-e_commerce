@@ -7,11 +7,14 @@ const LIST_URL = `https://japceibal.github.io/emercado-api/cats_products/${ident
 fetch(LIST_URL)
 .then(res => res.json() )
 .then(data => {
-    let htmlContentToAppend = "";
+    let htmlContentToAppend = `<div class="text-center p-4">
+    <h2>Productos</h2>
+    <p>Verás aquí todos los productos de la categoría ${data.catName}</p>
+</div>`;
 
     for(product of data.products){ 
         
-        htmlContentToAppend += `
+        htmlContentToAppend += `        
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
@@ -31,5 +34,5 @@ fetch(LIST_URL)
         </div>
         `
     }
-    document.getElementById("product-container").innerHTML = htmlContentToAppend; 
+    document.getElementById('product-container').innerHTML = htmlContentToAppend; 
 })
