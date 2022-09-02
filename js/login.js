@@ -4,11 +4,12 @@ miFormulario.addEventListener('submit', function(evento){
     let loginMail = document.getElementById('loginMail');
     let loginPassword = document.getElementById('loginPassword');
     evento.preventDefault();
-    console.log((loginMail.value).length);
 
     if ((loginMail.value).length > 0 && (loginPassword.value).length > 0) {
         evento.preventDefault();
         window.location.href = 'home.html';
+        //avance 01/09, guardo en localStorage el mail del usuario para usar luego en la página inicial
+        localStorage.setItem('userMail', `${loginMail.value}`);
     } else if (!((loginMail.value).length > 0) && !(loginPassword.value).length > 0){
         evento.preventDefault();
         document.getElementById("invalidMail").innerHTML = '<p style="color:red">Ingrese un mail por favor</p>';
