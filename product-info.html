@@ -32,14 +32,35 @@
           </li>
           <li class="nav-item">
           </li>
+          <li class="nav-item">
+            <a class="nav-link" id="userMailBar" href=""></a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
     <div class="container">
-    <div id="product-info-container">
-    </div>
+      <div id="product-info-container">
+        
+      </div>
+      <div id="products_comments"></div>
+      <div id="comment_tab">
+        <hr>
+        <h2 style="margin-top:10px"><b>Comentar</b></h2>
+        <label class="mb-1" style="display:block;">Tu opinión:<textarea id="comment_box" style="display:block;" cols="50" rows="5"></textarea></label>
+        <label class="mb-1" style="display:block;">Tu puntuación:
+            <select style="display:block;" name="rate" id="comment_rate">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+            </select>
+        </label>
+        <input id="btn_enviar" class="mb-1" class="btn-" type="button" value="Enviar">
+        <hr>
+      </div>
     </div>
   </main>
   <footer class="text-muted">
