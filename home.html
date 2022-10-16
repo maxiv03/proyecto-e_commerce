@@ -29,9 +29,15 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <!-- avance 01/09, agrego un nav bar vacío para poner el mail del usuario -->
           <li class="nav-item">
-            <a class="nav-link" id="userMailBar" href=""></a>
+            <div class="dropdown">
+            <a class="nav-link"  id="userMailBar" href="" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a id="logOut" class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+            </ul>
+            </div>
           </li>
         </ul>
       </div>

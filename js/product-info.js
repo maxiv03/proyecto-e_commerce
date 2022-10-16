@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         const productInfoObj = resultObj[0];
         const productCommentsObj = resultObj[1];
         if (productInfoObj.status === "ok"){
-            let htmlImagesToAppend = ''
+            let htmlImagesToAppend = '';
             for(let i = 0; i < productInfoObj.data.images.length; i++){
                 htmlImagesToAppend +=`<div class="col-3">
                 <img src="` + productInfoObj.data.images[i] + `" alt="product image" class="img-thumbnail">
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             let htmlContentToAppend = ``;
             htmlContentToAppend += `        
                 <div style="margin-top:10px">
-                    <h1>${productInfoObj.data.name}</h1><hr/>
+                    <h1 class="text-center">${productInfoObj.data.name}</h1><hr/>
                 </div>
                 <div>
                     <h5><b>Precio</b></h3>
@@ -42,10 +42,31 @@ document.addEventListener("DOMContentLoaded", function(e){
                 </div>
                 `;
             document.getElementById("product-info-container").innerHTML = htmlContentToAppend;
-        }
+//avance proyecto JAP entrega 1 parte 1.
+//En la misma página realizada en la entrega anterior con respecto a la información de un producto, muestra también los productos relacionados al mismo, incluyendo su nombre e imagen.
 
+            let htmlRelatedProductsToAppend = `<div style="margin-top:10px"><h3><b>Productos relacionados</b></h3></div>`;
+            for(let i = 0; i < productInfoObj.data.relatedProducts.length; i++){
+                htmlRelatedProductsToAppend +=`<div id="${productInfoObj.data.relatedProducts[i].id}" class="col-3"><figure class="img-thumbnail">
+                <img src="` + productInfoObj.data.relatedProducts[i].image + `" class="img-fluid" alt="product image">
+                <figcaption class="text-center">${productInfoObj.data.relatedProducts[i].name}</figcaption>
+                </figure>
+            </div>`
+            }
+            document.getElementById("related_products").innerHTML = htmlRelatedProductsToAppend;
+        }
+//avance proyecto JAP entrega 1 parte 1.
+//Al pulsar sobre uno de los productos relacionados, se debe actualizar la página, mostrando ahora la información de dicho producto.
+            for(let i = 0; i < productInfoObj.data.relatedProducts.length; i++){
+                let relatedProduct = productInfoObj.data.relatedProducts[i];
+                document.getElementById(`${relatedProduct.id}`).addEventListener("click", function() {
+                    localStorage.setItem("productID", relatedProduct.id);
+                    window.location = "product-info.html"
+                });
+            }
+// comentarios del producto
         if (productCommentsObj.status === "ok"){
-            let htmlContentToAppend = `<div style="margin-top:10px"><h3><b>Comentarios</b></h2></div>`;
+            let htmlContentToAppend = `<div style="margin-top:10px"><h3><b>Comentarios</b></h3></div>`;
 
             let htmlStarstoAppend = ''
 
@@ -76,10 +97,4 @@ document.addEventListener("DOMContentLoaded", function(e){
             document.getElementById("product-info-container").innerHTML += htmlContentToAppend;
         }
     })
-// avance en entrega 3, parte 4, proyecto JAP 17/09
-/*     const commentBox = document.getElementById('comment_box');
-    const btnEnviar = document.getElementById('btn_enviar');
-    btnEnviar.addEventListener('click', function(e){
-        if(localStorage.getItem())
-    }) */
 })

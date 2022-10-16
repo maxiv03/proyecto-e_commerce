@@ -10,6 +10,10 @@ const EXT_TYPE = ".json";
 let userMailBar = document.getElementById('userMailBar');
 let userMail = localStorage.getItem('userMail');
 userMailBar.innerText = `${userMail}`
+document.getElementById("logOut").addEventListener("click", function(){
+  localStorage.removeItem("userMail");
+  window.location = "index.html";
+})
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
