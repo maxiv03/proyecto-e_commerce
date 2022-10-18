@@ -45,8 +45,36 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+<!-- entrega 5, parte 1> creo un contenedor para meter todo lo que haga en cart.js -->
+      <div id="cart-container">
+      </div>
+<!-- entrega 5, parte 2> creo los controles graficos necesarios para un envio, sin funcionalidad por ahora -->
+      <div style="margin-bottom:10px">
+      <hr>
+        <h3>Tipo de envío</h3>
+        <div>
+          <input type="radio" id="premium" name="tipoEnvio" value="premium"checked>
+          <label for="premium">Premium 2 a 5 días (15%)</label>
+        </div>
+        <div>
+          <input type="radio" id="express" name="tipoEnvio" value="express">
+          <label for="express">Express 5 a 8 días (7%)</label>
+        </div>
+        <div>
+          <input type="radio" id="standard" name="tipoEnvio" value="standard">
+          <label for="standard">Standard 12 a 15 días (5%)</label>
+        </div>
+      </div>
+      <div>
+        <h3>Dirección de envío</h3>
+        <div style="display:flex;">
+          <label class="mb-1" style="display:block;">Calle<input type="text" size="30" style="display:block; margin-right:50px"></input></label>
+          <label class="mb-1" style="display:block;">Número<input type="text" size="10" style="display:block;"></input></label>
+        </div>
+        <div>
+          <label class="mb-1" style="display:block;">Esquina<input type="text" size="30" style="display:block;"></input></label>
+        </div>
+      <hr>
       </div>
     </div>
   </main>
