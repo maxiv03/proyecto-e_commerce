@@ -7,7 +7,7 @@ miFormulario.addEventListener('submit', function(evento){
 
     if ((loginMail.value).length > 0 && (loginPassword.value).length > 0) {
         evento.preventDefault();
-        window.location.href = 'home.html';
+        window.location.href = 'index.html';
         //avance 01/09, guardo en localStorage el mail del usuario para usar luego en la página inicial
         localStorage.setItem('userMail', `${loginMail.value}`);
     } else if (!((loginMail.value).length > 0) && !(loginPassword.value).length > 0){

@@ -7,12 +7,17 @@ const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
+if(localStorage.getItem('userMail') == null && !(document.URL.includes("login.html"))){
+  alert('Por favor ingrese con un mail cualquiera.');
+  window.location = "login.html";
+}
+
 let userMailBar = document.getElementById('userMailBar');
 let userMail = localStorage.getItem('userMail');
 userMailBar.innerText = `${userMail}`
 document.getElementById("logOut").addEventListener("click", function(){
   localStorage.removeItem("userMail");
-  window.location = "index.html";
+  window.location = "login.html";
 })
 
 let showSpinner = function(){

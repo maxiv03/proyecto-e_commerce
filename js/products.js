@@ -74,6 +74,13 @@ function showProductsList(){
             }
         }
         document.getElementById("product-container").innerHTML = htmlContentToAppend;
+        for(let i = 0; i < currentProductsArray.length; i++){
+            let product = currentProductsArray[i];
+            document.getElementById(`${product.id}`).addEventListener("click", function() {
+                localStorage.setItem("productID", product.id);
+                window.location = "product-info.html"
+            });
+        }
 }
 
 // función para ordenar y mostrar la lista de productos, usa las dos funciones anteriores
@@ -98,15 +105,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             currentProductsArray = resultObj.data.products
             document.getElementById('catNameContainer').innerHTML = resultObj.data.catName;
             showProductsList()
-// avance en proyecto, entrega 3, parte 1, Modifica products.html para que cada vez que el usuario seleccione 
-// un producto, su identificador se guarde en el almacenamiento local y se redirija a product-info.html
-            for(let i = 0; i < currentProductsArray.length; i++){
-                let product = currentProductsArray[i];
-                document.getElementById(`${product.id}`).addEventListener("click", function() {
-                    localStorage.setItem("productID", product.id);
-                    window.location = "product-info.html"
-                });
-            }
+            
         }
     });
 

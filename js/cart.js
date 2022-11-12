@@ -1,4 +1,21 @@
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
+/* let cartList = [];
+
+if(localStorage.getItem("cartList") == null){
+    cartList = [];
+} else{
+    cartList = JSON.parse(localStorage.getItem("cartList"));
+}
+
+document.addEventListener("DOMContentLoaded", function(e){
+    let cartItemToAdd = JSON.parse(localStorage.getItem("productToCart"));
+
+    if(!(cartList.some(cartItem => cartItem.data.id == cartItemToAdd.data.id))){
+        cartList.push(cartItemToAdd);
+        localStorage.setItem('cartList', JSON.stringify(cartList));
+    }
+
+}) */
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(CART_INFO_URL).then(function(resultObj){
@@ -133,33 +150,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
         var form = document.querySelector('.needs-validation');
-        
-
-        /* if(botonTarjeta.checked){
-            if(numeroCredito.value = ''){
-                numeroCredito.setCustomValidity(false);
-            }else{
-                numeroCredito.setCustomValidity('');
-            }
-
-            if(codigoCredito.value = ''){
-                codigoCredito.setCustomValidity(false);
-            }else{
-                codigoCredito.setCustomValidity('');
-            }
-
-            if(vencimientoCredito.value = ''){
-                vencimientoCredito.setCustomValidity(false);
-            }else{
-                vencimientoCredito.setCustomValidity('');
-            }
-        }else if(botonTransferencia.checked){
-            if(numeroTransferencia.value = ''){
-                numeroTransferencia.setCustomValidity(false);
-            }else{
-                numeroTransferencia.setCustomValidity('');
-            }
-        } */
 
         form.addEventListener('submit', function (event) {
 
