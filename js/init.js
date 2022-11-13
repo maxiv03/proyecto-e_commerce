@@ -7,9 +7,13 @@ const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
+let userIsLogged = false;
+
 if(localStorage.getItem('userMail') == null && !(document.URL.includes("login.html"))){
   alert('Por favor ingrese con un mail cualquiera.');
   window.location = "login.html";
+} else {
+  userIsLogged = true;
 }
 
 let userMailBar = document.getElementById('userMailBar');

@@ -50,7 +50,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a id="logOut" class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+              <li><a id="logOut" class="dropdown-item" href="login.html">Cerrar sesión</a></li>
             </ul>
             </div>
           </li>
@@ -60,9 +60,50 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div>
+        <br>
+        <h1>Perfil</h1>
+        <br><hr>
       </div>
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-5">
+          <label for="primerNombreUser" class="form-label">Primer nombre*</label>
+          <input type="text" class="form-control" id="primerNombreUser" required>
+          <div class="valid-feedback">
+            Bien!
+          </div>
+        </div>
+        <div class="col-md-5">
+          <label for="segundoNombreUser" class="form-label">Segundo nombre</label>
+          <input type="text" class="form-control" id="segundoNombreUser">
+        </div>
+        <div class="col-md-5">
+          <label for="primerApellidoUser" class="form-label">Primer apellido*</label>
+          <input type="text" class="form-control" id="primerApellidoUser" required>
+          <div class="valid-feedback">
+            Bien!
+          </div>
+        </div>
+        <div class="col-md-5">
+          <label for="segundoApellidoUser" class="form-label">Segundo apellido</label>
+          <input type="text" class="form-control" id="segundoApellidoUser">
+        </div>
+        <div class="col-md-5">
+          <label for="telefonoUser" class="form-label">Teléfono de contacto*</label>
+          <input type="text" class="form-control" id="celularUser" required>
+          <div class="valid-feedback">
+            Bien!
+          </div>
+        </div>
+        <div class="col-md-5">
+          <label for="e-mailUser" class="form-label">E-mail</label>
+          <input type="text" class="form-control" id="e-mailUser" disabled>
+        </div>
+        <br><br><br><br><br><hr>
+        <div class="col-8">
+          <button class="btn btn-primary" type="submit">Guardar datos</button>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">
