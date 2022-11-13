@@ -5,7 +5,11 @@ let inputUserPrimerApellido = document.getElementById('primerApellidoUser');
 let inputUserSegundoApellido = document.getElementById('segundoApellidoUser');
 let inputUserCelular = document.getElementById('celularUser');
 let currentUserMail = localStorage.getItem('userMail');
-let usersList = JSON.parse(localStorage.getItem('usersList'));
+let usersList = [];
+if (localStorage.getItem('usersList') !== null){
+    usersList = JSON.parse(localStorage.getItem('usersList'));
+}
+
 let currentUser = {
     primerNombre : "",
     segundoNombre : "",
@@ -33,24 +37,9 @@ if(localStorage.getItem("usersList") == null){
     usersList = JSON.parse(localStorage.getItem("usersList"));
 }
 
-
-
-/* document.addEventListener("DOMContentLoaded", function(e){
-
-    if(!(usersList.some(user => user.eMail == userToAdd.data.id))){
-        usersList.push(userToAdd);
-        localStorage.setItem('usersList', JSON.stringify(usersList));
-    }
-
-}) */
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
